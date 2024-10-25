@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Code;
 use App\Models\Track;
@@ -17,8 +18,10 @@ class DatabaseSeeder extends Seeder
     {
         // Create weeks
         $this->call(WeekSeeder::class);
-
+        $this->call(CategoryTrackSeeder::class);
         // Create content
+        Category::factory()->count(9)->create();
+
         User::factory()
             ->count(15)
             ->has(
