@@ -17,19 +17,9 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        $categories = [
-            'Soul',
-            'Ambient',
-            'Pop',
-            'Rap',
-            'Funk',
-            'Rock',
-            'Reggae / Dub',
-            'Techno',
-            'Electro'
-        ];
+
         return [
-            'name' => $this->faker->unique()->randomElement($categories)
+            'name' => $this->faker->unique()->word()
             ];
     }
 }
