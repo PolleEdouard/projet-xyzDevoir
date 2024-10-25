@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     // Track
     Route::get('/tracks/create', [TrackController::class, 'create'])->name('app.tracks.create');
     Route::post('/tracks/create', [TrackController::class, 'store'])->name('app.tracks.store');
+    // Categories
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('app.profile.edit');
