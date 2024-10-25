@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Track;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -28,8 +29,7 @@ class CategoryFactory extends Factory
             'Electro'
         ];
         return [
-            'name' => $this->faker->unique()->randomElement($categories),
-            'description' => $this->faker->sentence(3),
-        ];
+            'name' => $this->faker->unique()->randomElement($categories)
+            ];
     }
 }

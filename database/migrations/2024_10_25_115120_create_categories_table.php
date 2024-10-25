@@ -13,11 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id('category_id');
-            $table->primary(['category_id', 'track_id']);
-            $table->foreignIdFor(Track::class, 'track_id')->constrained('tracks')->onDelete('cascade');
-            $table->string('category_name');
-            $table->string('category_description');
+            $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

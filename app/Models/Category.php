@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description'];
 
-    /* relation entre catégorie et tracks*/
-    public function tracks()
+
+    public function track(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->belongsToMany(Track::class, 'category_track')->using(CategoryTrack::class);
+        return $this->hasMany(Track::class, 'category_id');
     }
 }

@@ -68,8 +68,8 @@ class Track extends Model
             ->orderBy('created_at', 'asc');
     }
 
-    public function categories()
+    public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class, 'category_track')->using(CategoryTrack::class);
+        return $this->belongsToMany(Category::class);
     }
 }
